@@ -89,8 +89,6 @@ npm run create-issues
 1. **Go to Vercel**: Visit [Vercel](https://vercel.com/jessicaloers-projects) and sign up or log in.
 2. **Import your project**: Click on "New Project" and select your GitHub repository.
 
-Here's a more detailed version of **Step 8** for the project setup manual:
-
 ### Step 8: Add Team Members
 
 To ensure smooth collaboration, you need to add your team members as collaborators to both the GitHub repository and project board. Follow the steps below:
