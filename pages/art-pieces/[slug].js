@@ -11,6 +11,9 @@ export default function ArtPiece({ data, isLoading }) {
 
     return (
       <>
+        <button onClick={router.back} type="button">
+          back
+        </button>
         <h1>{name}</h1>
         <Image height={500} width={500} alt="Art" src={imageSource} />
         <p>
@@ -19,7 +22,7 @@ export default function ArtPiece({ data, isLoading }) {
         <h4>Colors</h4>
         {colors.map((color) => {
           return (
-            <div style={{ color: color, display: 'inline'}} key={uid(color)}>
+            <div style={{ color: color, display: "inline" }} key={uid(color)}>
               {color}
             </div>
           );
