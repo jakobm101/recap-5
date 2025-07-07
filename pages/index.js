@@ -1,4 +1,5 @@
 import Spotlight from "@/components/Gallery/Gallery__Spotlight";
+import { useRouter } from "next/router";
 
 export default function Homepage({
   data,
@@ -6,10 +7,12 @@ export default function Homepage({
   toggleFavorite,
   favorites,
 }) {
+  const router = useRouter();
   const randomIndex = (array = []) => {
     const length = array.length;
     return Math.floor(Math.random() * length);
   };
+  const index = randomIndex(data);
 
   return (
     <div>
@@ -18,9 +21,10 @@ export default function Homepage({
       {data && data.length > 0 && (
         <Spotlight
           isLoading={isLoading}
-          image={data[randomIndex(data)]}
+          image={data[index]}
           toggleFavorite={toggleFavorite}
           favorites={favorites}
+          onClick={() => router.push(`/art-pieces/${data[index].slug}`)}
         />
       )}
     </div>

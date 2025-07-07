@@ -1,3 +1,5 @@
+import { uid } from "react-uid";
+
 export default function Gallery__Colors({ colors }) {
   return (
     <>
