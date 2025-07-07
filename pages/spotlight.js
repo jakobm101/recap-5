@@ -1,13 +1,10 @@
 import Gallery__Images__List from "@/components/Gallery/Gallery__Images__List";
 import Spotlight from "@/components/Gallery/Gallery__Spotlight";
-import { useEffect } from "react";
 
 export default function Spotlight__Page({ data }) {
   const randomIndex = (array = []) => {
     const length = array.length;
-    const randomIndex = Math.floor(Math.random() * length);
-    console.log({ randomIndex });
-    return randomIndex
+    return Math.floor(Math.random() * length);
   };
 
   return (
