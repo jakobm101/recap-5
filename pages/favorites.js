@@ -6,17 +6,9 @@ export default function Favorites({
   toggleFavorite,
   favorites,
 }) {
-  if (data) {
-    const favoritesData = data?.filter((image) => {
-      favorites?.find((fav) => fav?.id === image.slug);
-    });
-    console.log(data[0].slug);
-    console.log(favorites);
-
-    console.log("fav data", favoritesData);
-    console.log(
-      "isFav",
-      favorites?.filter((fav) => fav.isFav)
+  if (data && favorites) {
+    const favoritesData = data.filter(
+      (img) => favorites?.find((fav) => fav.id === img.slug)?.isFav
     );
 
     return (
