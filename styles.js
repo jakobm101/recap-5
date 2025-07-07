@@ -88,5 +88,9 @@ form {
   border: black 2px solid;
 padding: 10px;
 margin: 10px;  
+  .comment {
+    border: 1px solid black;
+    
+  }
 }
 `;
