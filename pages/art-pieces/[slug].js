@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { uid } from "react-uid";
 import Gallery__Button__Favorite from "@/components/Gallery/Gallery__Button__Favorite";
+import useLocalStorage from "use-local-storage";
+import Gallery__Comments from "@/components/Gallery/Gallery__Comments";
 
 export default function ArtPiece({
   data,
@@ -10,6 +12,8 @@ export default function ArtPiece({
   toggleFavorite,
 }) {
   const router = useRouter();
+  const [comments, setComments] = useLocalStorage(`comments for ${router.query.slug}`, []);
+
   if (data && data.length > 0) {
     const { slug, name, imageSource, artist, year, genre, colors } = data.find(
       (img) => img.slug === router.query.slug
@@ -27,8 +31,8 @@ export default function ArtPiece({
           {isFav ? " ⭐️ love it so much" : " 🤷"}
         </h1>
         <Image
-          height={500}
-          width={500}
+          height={300}
+          width={300}
           alt="Art"
           src={imageSource}
           style={isFav ? style : ""}
@@ -49,6 +53,7 @@ export default function ArtPiece({
             </div>
           );
         })}
+        <Gallery__Comments comments={comments} setComments={setComments} id={slug}/>
       </>
     );
   } else if (isLoading) {
