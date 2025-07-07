@@ -5,7 +5,7 @@ export default function Gallery__Images__List({ data }) {
   if (data) {
     return (
       <>
-        <h2>List</h2>
+        <h2>All images</h2>
         {data.map((image) => (
           <Gallery__Image image={image} key={uid(image)} />
         ))}
