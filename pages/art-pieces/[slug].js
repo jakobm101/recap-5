@@ -14,14 +14,25 @@ export default function ArtPiece({
     const { slug, name, imageSource, artist, year, genre, colors } = data.find(
       (img) => img.slug === router.query.slug
     );
+    const isFav = favorites?.find((fav) => fav.id === slug && fav.isFav);
+    const style = { border: "lime 5px solid" };
 
     return (
       <>
         <button onClick={router.back} type="button">
           back
         </button>
-        <h1>{name}</h1>
-        <Image height={500} width={500} alt="Art" src={imageSource} />
+        <h1>
+          {name}
+          {isFav ? " ⭐️ love it so much" : " 🤷"}
+        </h1>
+        <Image
+          height={500}
+          width={500}
+          alt="Art"
+          src={imageSource}
+          style={isFav ? style : ""}
+        />
         <p>
           By {artist}, {year}, {genre}
         </p>
