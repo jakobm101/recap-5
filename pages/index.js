@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Gallery__Images__List from "@/components/Gallery/Gallery__Images__List";
 
 export default function HomePage({ data }) {
   console.log("fetched", data?.[0]);
@@ -6,7 +6,7 @@ export default function HomePage({ data }) {
   return (
     <div>
       <h1> ART Gallery</h1>
-      <Image src={data?.[0].imageSource} width={100} height={100} alt="Art"></Image>
+      <Gallery__Images__List data={data} />
     </div>
   );
 }
