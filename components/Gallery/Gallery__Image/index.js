@@ -6,7 +6,7 @@ export default function Gallery__Image({ image, favorites, toggleFavorite }) {
   const router = useRouter();
   const isFav = favorites?.find(fav => fav.id === image.slug && fav.isFav)
   return (
-    <div style={{ border: "1px black solid", padding: "5px", margin: "5px" }}>
+    <article className={'gallery__image'} style={{ border: "1px black solid", padding: "5px", margin: "5px" }}>
       <Image
         onClick={() => router.push(`/art-pieces/${image.slug}`)}
         src={image.imageSource}
@@ -27,6 +27,6 @@ export default function Gallery__Image({ image, favorites, toggleFavorite }) {
         toggleFavorite={toggleFavorite}
         id={image.slug}
       />
-    </div>
+    </article>
   );
 }

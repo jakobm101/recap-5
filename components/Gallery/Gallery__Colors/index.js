@@ -2,11 +2,10 @@ import { uid } from "react-uid";
 
 export default function Gallery__Colors({ colors }) {
   return (
-    <>
-      <h4>Colors</h4>
+    <section className="colors">
       {colors.map((color) => {
         return (
-          <div
+          <article
             style={{
               color: "white",
               display: "inline-block",
@@ -19,9 +18,9 @@ export default function Gallery__Colors({ colors }) {
             key={uid(color)}
           >
             {color}
-          </div>
+          </article>
         );
       })}
-    </>
+    </section>
   );
 }

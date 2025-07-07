@@ -12,7 +12,10 @@ export default function ArtPiece({
   toggleFavorite,
 }) {
   const router = useRouter();
-  const [comments, setComments] = useLocalStorage(`comments for ${router.query.slug}`, []);
+  const [comments, setComments] = useLocalStorage(
+    `comments for ${router.query.slug}`,
+    []
+  );
 
   if (data && data.length > 0) {
     const { slug, name, imageSource, artist, year, genre, colors } = data.find(
@@ -22,7 +25,7 @@ export default function ArtPiece({
     const style = { border: "lime 5px solid" };
 
     return (
-      <>
+      <main>
         <button onClick={router.back} type="button">
           back
         </button>
@@ -46,7 +49,12 @@ export default function ArtPiece({
           favorites={favorites}
         />
         <Gallery__Colors colors={colors} />
-      </>
+        <Gallery__Comments
+          comments={comments}
+          id={slug}
+          setComments={setComments}
+        />
+      </main>
     );
   } else if (isLoading) {
     return "Loading";

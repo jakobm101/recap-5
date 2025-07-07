@@ -15,7 +15,7 @@ export default function Homepage({
   const index = randomIndex(data);
 
   return (
-    <div>
+    <main>
       <h1> Spotlight </h1>
       {!isLoading || <h2> is loading</h2>}
       {data && data.length > 0 && (
@@ -27,6 +27,6 @@ export default function Homepage({
           onClick={() => router.push(`/art-pieces/${data[index].slug}`)}
         />
       )}
-    </div>
+    </main>
   );
 }

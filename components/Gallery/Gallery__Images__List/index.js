@@ -8,8 +8,7 @@ export default function Gallery__Images__List({
 }) {
   if (data) {
     return (
-      <>
-        <h2>All images</h2>
+      <section className="gallery__list">
         {data.map((image) => (
           <Gallery__Image
             image={image}
@@ -18,7 +17,7 @@ export default function Gallery__Images__List({
             toggleFavorite={toggleFavorite}
           />
         ))}
-      </>
+      </section>
     );
   }
 }
