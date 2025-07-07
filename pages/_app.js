@@ -15,9 +15,9 @@ export default function App({ Component, pageProps }) {
     const favorite = favorites.find((fav) => fav.id === id);
 
     let newArray = favorites.map((fav) =>
-      fav.id === id ? { ...favorite, isFav: !favorite.isFav } : fav
+      fav.id === id ? { ...fav, isFav: !fav.isFav } : fav
     );
-    if (!favorite) newArray.push({ id: id, isFav: true });
+    favorite || newArray.push({ id: id, isFav: true });
 
     setFavorites(newArray);
   };
