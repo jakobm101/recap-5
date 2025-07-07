@@ -12,12 +12,17 @@ export default function App({ Component, pageProps }) {
 
   const toggleFavorite = (id) => {
     console.log("handling", id, favorites);
-    const favorite = favorites.find((fav) => fav.id === id);
 
-    let newArray = favorites.map((fav) =>
-      fav.id === id ? { ...fav, isFav: !fav.isFav } : fav
-    );
-    favorite || newArray.push({ id: id, isFav: true });
+    // let newArray = favorites.map((fav) => fav.id === id ? { ...fav, isFav: !fav.isFav } : fav);
+    let newArray = [];
+    let isNew = true;
+    for (let fav of favorites) {
+      if (id === fav.id) {
+        isNew = false;
+        newArray.push({ ...fav, isFav: !fav.isFav });
+      } else newArray.push(fav);
+    }
+    !isNew || newArray.push({ id: id, isFav: true });
 
     setFavorites(newArray);
   };
