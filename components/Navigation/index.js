@@ -5,6 +5,7 @@ export default function Navigation() {
     <nav>
       <Nav__Link link={"/"}>Spotlight</Nav__Link>
       <Nav__Link link={"/art-pieces"}>Gallery</Nav__Link>
+      <Nav__Link link={"/favorites"}>Favorites</Nav__Link>
     </nav>
   );
 }
