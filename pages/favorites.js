@@ -12,7 +12,7 @@ export default function Favorites({
     );
 
     return (
-      <div>
+      <main>
         <h1> Favorites </h1>
         {!isLoading || <h2> is loading</h2>}
         {data && data.length > 0 && (
@@ -22,7 +22,7 @@ export default function Favorites({
             toggleFavorite={toggleFavorite}
           />
         )}
-      </div>
+      </main>
     );
   } else {
     return "Loading Favorites";
