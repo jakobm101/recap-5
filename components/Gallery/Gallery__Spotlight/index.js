@@ -1,7 +1,9 @@
 import Image from "next/image";
 
-export default function Spotlight({ image }) {
-  if (image) {
+export default function Spotlight({ image, isLoading }) {
+  if (isLoading) {
+    return <h2>is loading ⭐️ </h2>;
+  } else if (image) {
     return (
       <>
         <h2>Spotlight Image</h2>
@@ -10,6 +12,6 @@ export default function Spotlight({ image }) {
       </>
     );
   } else {
-    return <h2>Loading</h2>;
+    return <h2>No image available</h2>;
   }
 }
