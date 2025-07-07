@@ -12,8 +12,7 @@ export default function ArtPiece({
   toggleFavorite,
 }) {
   const router = useRouter();
-  const comments = useLocalStorage("comments", { body: "hi" });
-  console.log(comments);
+  const [comments, setComments] = useLocalStorage("comments", [{ body: "hi" }]);
 
   if (data && data.length > 0) {
     const { slug, name, imageSource, artist, year, genre, colors } = data.find(
@@ -54,7 +53,7 @@ export default function ArtPiece({
             </div>
           );
         })}
-        <Gallery__Comments comments={comments} />
+        <Gallery__Comments comments={comments} setComments={setComments} />
       </>
     );
   } else if (isLoading) {
