@@ -6,6 +6,7 @@ export default function Spotlight({ image }) {
       <>
         <h2>Spotlight Image</h2>
         <Image src={image.imageSource} height={500} width={500} alt="Art" />
+        <p>{image.artist}</p>
       </>
     );
   } else {
