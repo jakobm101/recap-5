@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Nav__Link from "./Nav__Link";
 
 export default function Navigation() {
     return (
         <nav>
-        <Link href={'/'}>Spotlight</Link>
+        <Nav__Link link={'/'}>Spotlight</Nav__Link>
         </nav>
     )
 }
