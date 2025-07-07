@@ -1,11 +1,12 @@
 export default function Gallery__Button__Favorite({
   id = "2",
-  toggleFavorite 
+  toggleFavorite,
+  favorites,
 }) {
   return (
     <>
       {/* to do: PROP DRILL */}
-      <button onClick={() => toggleFavorite(id)}>Favorite</button>
+      <button onClick={() => toggleFavorite(id)}>Favorite </button>
     </>
   );
 }

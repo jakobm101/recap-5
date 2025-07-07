@@ -11,6 +11,10 @@ export default function App({ Component, pageProps }) {
   const [favorites, setFavorites] = useState([]);
 
   const toggleFavorite = (id = 1) => {
+// to do 
+// prop drill to 
+// // gallery
+// // [slug]
     console.log("handling", id, favorites);
     const favorite = favorites.find((fav) => fav.id === id);
     const newFav = { id: id, isFav: true };

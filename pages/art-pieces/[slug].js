@@ -3,11 +3,15 @@ import Image from "next/image";
 import { uid } from "react-uid";
 import Gallery__Button__Favorite from "@/components/Gallery/Gallery__Button__Favorite";
 
-
-export default function ArtPiece({ data, isLoading }) {
+export default function ArtPiece({
+  data,
+  isLoading,
+  favorites,
+  toggleFavorite,
+}) {
   const router = useRouter();
   if (data && data.length > 0) {
-    const { name, imageSource, artist, year, genre, colors } = data.find(
+    const { slug, name, imageSource, artist, year, genre, colors } = data.find(
       (img) => img.slug === router.query.slug
     );
 
@@ -21,7 +25,11 @@ export default function ArtPiece({ data, isLoading }) {
         <p>
           By {artist}, {year}, {genre}
         </p>
-        <Gallery__Button__Favorite />
+        <Gallery__Button__Favorite
+          toggleFavorite={toggleFavorite}
+          id={slug}
+          favorites={favorites}
+        />
         <h4>Colors</h4>
         {colors.map((color) => {
           return (
