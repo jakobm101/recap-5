@@ -1,6 +1,6 @@
 import Gallery__Images__List from "@/components/Gallery/Gallery__Images__List";
 
-export default function Gallery({ data, isLoading, error }) {
+export default function ArtPieces({ data, isLoading, error }) {
   return (
     <div>
       <h1> Gallery </h1>
