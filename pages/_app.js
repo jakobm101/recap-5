@@ -10,16 +10,16 @@ export default function App({ Component, pageProps }) {
   const { data, isLoading, error } = useSWR(URL, () => fetcher(URL));
   const [favorites, setFavorites] = useState([]);
 
-  const toggleFavorite = (id = 1) => {
-// to do 
-// prop drill to 
-// // gallery
-// // [slug]
+  const toggleFavorite = (id) => {
     console.log("handling", id, favorites);
     const favorite = favorites.find((fav) => fav.id === id);
-    const newFav = { id: id, isFav: true };
-    setFavorites([...favorites, favorite ? favorite : newFav]);
 
+    let newArray = favorites.map((fav) =>
+      fav.id === id ? { ...favorite, isFav: !favorite.isFav } : fav
+    );
+    if (!favorite) newArray.push({ id: id, isFav: true });
+
+    setFavorites(newArray);
   };
 
   return (
