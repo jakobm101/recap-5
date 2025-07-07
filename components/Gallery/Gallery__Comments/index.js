@@ -2,6 +2,8 @@ import { uid } from "react-uid";
 import Gallery__Comment__Form from "../Gallery__Comment__Form";
 
 export default function Gallery__Comments({ comments, setComments, id }) {
+  console.log("comm gal com", comments);
+
   return (
     <section className="comments">
       <h3>Comments</h3>
@@ -9,7 +11,7 @@ export default function Gallery__Comments({ comments, setComments, id }) {
         {comments.length &&
           comments.map((comment) => {
             return (
-              <li key={uid(comment)} className={comment}>
+              <li key={uid(comment)} className={"comment"}>
                 <p>{comment.body}</p>
                 <p>{comment.date}</p>
               </li>

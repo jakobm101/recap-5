@@ -16,6 +16,9 @@ export default function ArtPiece({
     `comments for ${router.query.slug}`,
     []
   );
+    
+  console.log('slug comm', comments);
+  
 
   if (data && data.length > 0) {
     const { slug, name, imageSource, artist, year, genre, colors } = data.find(
