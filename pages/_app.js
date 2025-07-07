@@ -1,14 +1,14 @@
 import GlobalStyle from "../styles";
 import Navigation from "@/components/Navigation";
-import { useState } from "react";
 import useSWR from "swr";
+import useLocalStorage from "use-local-storage";
 
 const URL = "https://example-apis.vercel.app/api/art";
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
 export default function App({ Component, pageProps }) {
   const { data, isLoading, error } = useSWR(URL, () => fetcher(URL));
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useLocalStorage("favorites", []);
 
   const toggleFavorite = (id) => {
     console.log("handling", id, favorites);
@@ -16,11 +16,13 @@ export default function App({ Component, pageProps }) {
     // let newArray = favorites.map((fav) => fav.id === id ? { ...fav, isFav: !fav.isFav } : fav);
     let newArray = [];
     let isNew = true;
-    for (let fav of favorites) {
-      if (id === fav.id) {
-        isNew = false;
-        newArray.push({ ...fav, isFav: !fav.isFav });
-      } else newArray.push(fav);
+    if (favorites) {
+      for (let fav of favorites) {
+        if (id === fav.id) {
+          isNew = false;
+          newArray.push({ ...fav, isFav: !fav.isFav });
+        } else newArray.push(fav);
+      }
     }
     !isNew || newArray.push({ id: id, isFav: true });
 
