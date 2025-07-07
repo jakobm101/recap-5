@@ -12,6 +12,10 @@ export default function App({ Component, pageProps }) {
 
   const toggleFavorite = (id = 1) => {
     console.log("handling", id, favorites);
+    const favorite = favorites.find((fav) => fav.id === id);
+    const newFav = { id: id, isFav: true };
+    setFavorites([...favorites, favorite ? favorite : newFav]);
+
   };
 
   return (
