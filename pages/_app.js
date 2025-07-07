@@ -1,4 +1,5 @@
 import GlobalStyle from "../styles";
+import Navigation from "@/components/Navigation";
 import useSWR from "swr";
 
 const URL = "https://example-apis.vercel.app/api/art";
@@ -10,6 +11,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
+      <Navigation />
       <Component
         {...pageProps}
         data={data}
