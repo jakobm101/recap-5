@@ -6,15 +6,8 @@ export default function Gallery__Colors({ colors }) {
       {colors.map((color) => {
         return (
           <article
-            style={{
-              color: "white",
-              display: "inline-block",
-              width: "80px",
-              height: "70px",
-              backgroundColor: color,
-              padding: "5px",
-              margin: "5px",
-            }}
+            className="color"
+            style={{ backgroundColor: color }}
             key={uid(color)}
           >
             {color}

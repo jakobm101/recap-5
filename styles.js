@@ -8,6 +8,8 @@ export default createGlobalStyle`
   }
 :root {
   --color-grey: #d5d5d5; 
+  --color-grey-500: #9c9c9c;
+  --color-grey-100: #fafafa
 }
 
   body {
@@ -66,31 +68,116 @@ align-items: center;
 
 .colors {
   display: flex;
-  flex-flow: row wrap;
+  position: fixed;
+  right: 10px;
+  bottom: 60px;
+  flex-flow: column wrap;
   border: black 2px solid;
+  border-radius: 20px;
   margin: 10px;
 }
 
-form {
+.color {
+  color: white;
+  display: inline-block;
+            width: 80px;
+            height: 70px;
+            background-color: grey;
+            padding: 5px;
+            margin: 5px;
+  border-radius: 14px;
   border: black 2px solid;
+  
+}
+
+form {
+  border: black 1px solid;
+  border-radius: 14px;
+  background-color: var(--color-grey-100);
   display: flex;
   flex-flow: column wrap;
-  margin: 10px;
-  padding: 10px;
+  padding: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
   gap: 10px;
   width: 400px;
-  h3, h4 {
-    text-align: center;
+
+input {
+  padding: 12px;
+  font-size: large;
+}
+
+h4 {
+    padding: 0;
+    margin: 0;
+    padding-left: 14px;
+  }
+
+  label {
+    display: none;
+  }
+  
+  button {
+    width: fit-content;
+    padding: 10px;
   }
 }
 
 .comments {
   border: black 2px solid;
-padding: 10px;
-margin: 10px;  
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;  
+
+  h3 {
+    padding: 0;
+    margin: 0;
+    padding-left: 34px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
   .comment {
     border: 1px solid black;
+    border-radius: 14px;
+    padding: 10px;
+    margin: 20px 0 20px 0;
+    padding-left: 36px;
     
+    p {
+      margin: 0;
+    }
+    
+    .comment__date {
+      font-size: small;
+      color: var(--color-grey-500);
+    }
+  }
+  
+  .comment__empty {
+    padding-left: 34px;
+    color: var(--color-grey-500)
   }
 }
+
+  .button__back {
+    position: fixed;
+    top:20px;
+    right: 20px;
+    height: 50px;
+    width: 60px;
+  }
+
+.button__favorite-details {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    height: 50px;
+    width: 60px;
+}
+
 `;

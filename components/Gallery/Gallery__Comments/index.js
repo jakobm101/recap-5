@@ -8,26 +8,20 @@ export default function Gallery__Comments({ comments, setComments, id }) {
     <section className="comments">
       <h3>Comments</h3>
       <ul>
-        {comments.length &&
+        {comments.length ? (
           comments.map((comment) => {
             return (
               <li key={uid(comment)} className={"comment"}>
                 <p>{comment.body}</p>
-                <p>{comment.date}</p>
+                <p className="comment__date">{comment.date}</p>
               </li>
             );
-          })}
+          })
+        ) : (
+          <p className="comment__empty">no comments yet</p>
+        )}
       </ul>
-      <button
-        onClick={() =>
-          setComments([
-            ...comments,
-            { body: "yo", date: new Date().toLocaleString(), id: id },
-          ])
-        }
-      >
-        Yo
-      </button>
+
       <Gallery__Comment__Form
         comments={comments}
         setComments={setComments}

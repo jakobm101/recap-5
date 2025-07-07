@@ -16,9 +16,8 @@ export default function ArtPiece({
     `comments for ${router.query.slug}`,
     []
   );
-    
-  console.log('slug comm', comments);
-  
+
+  console.log("slug comm", comments);
 
   if (data && data.length > 0) {
     const { slug, name, imageSource, artist, year, genre, colors } = data.find(
@@ -29,7 +28,7 @@ export default function ArtPiece({
 
     return (
       <main>
-        <button onClick={router.back} type="button">
+        <button onClick={router.back} type="button" className="button__back">
           back
         </button>
         <h1>
@@ -50,6 +49,7 @@ export default function ArtPiece({
           toggleFavorite={toggleFavorite}
           id={slug}
           favorites={favorites}
+          className={"button__favorite-details"}
         />
         <Gallery__Colors colors={colors} />
         <Gallery__Comments
