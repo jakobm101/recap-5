@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { uid } from "react-uid";
+import Gallery__Button__Favorite from "@/components/Gallery/Gallery__Button__Favorite";
+
 
 export default function ArtPiece({ data, isLoading }) {
   const router = useRouter();
@@ -19,6 +21,7 @@ export default function ArtPiece({ data, isLoading }) {
         <p>
           By {artist}, {year}, {genre}
         </p>
+        <Gallery__Button__Favorite />
         <h4>Colors</h4>
         {colors.map((color) => {
           return (
