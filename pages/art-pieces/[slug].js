@@ -31,8 +31,8 @@ export default function ArtPiece({
           {isFav ? " ⭐️ love it so much" : " 🤷"}
         </h1>
         <Image
-          height={500}
-          width={500}
+          height={300}
+          width={300}
           alt="Art"
           src={imageSource}
           style={isFav ? style : ""}
