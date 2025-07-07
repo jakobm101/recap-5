@@ -13,12 +13,13 @@ export default function Gallery__Image({ image, favorites, toggleFavorite }) {
         width={100}
         height={100}
       />
+      {!!favorites?.find((fav) => fav?.id === image.slug) ? "⭐️":"" }
       <p>{image.name}</p>
       <p>{image.artist}</p>
       <Gallery__Button__Favorite
         favorites={favorites}
         toggleFavorite={toggleFavorite}
-    id={image.slug}
+        id={image.slug}
       />
     </div>
   );
