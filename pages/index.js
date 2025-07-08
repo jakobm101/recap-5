@@ -1,5 +1,6 @@
 import Spotlight from "@/components/Gallery/Gallery__Spotlight";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 export default function Homepage({
   data,
@@ -12,13 +13,17 @@ export default function Homepage({
     const length = array.length;
     return Math.floor(Math.random() * length);
   };
-  const index = randomIndex(data);
+  const [index, setIndex] = useState("loading");
+  useEffect(() => {
+    data?.length && setIndex(randomIndex(data));
+  }, [data]);
 
+  console.log("index", index);
   return (
     <main>
       <h1> Spotlight </h1>
-      {!isLoading || <h2> is loading</h2>}
-      {data && data.length > 0 && (
+      {isLoading && <h2> is loading</h2>}
+      {data?.length && (
         <Spotlight
           isLoading={isLoading}
           image={data[index]}
