@@ -9,16 +9,11 @@ export default function Homepage({
   favorites,
 }) {
   const router = useRouter();
-  const randomIndex = (array = []) => {
-    const length = array.length;
-    return Math.floor(Math.random() * length);
-  };
   const [index, setIndex] = useState("loading");
   useEffect(() => {
-    data?.length && setIndex(randomIndex(data));
+    data?.length && setIndex(Math.floor(Math.random() * data.length));
   }, [data]);
 
-  console.log("index", index);
   return (
     <main>
       <h1> Spotlight </h1>
