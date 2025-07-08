@@ -12,13 +12,10 @@ export default function ArtPiece({
   toggleFavorite,
 }) {
   const { query, back } = useRouter();
-  const [comments, setComments] = useLocalStorage(
-    `comments for ${query.slug}`,
-    []
-  );
+  const [comments, setComments] = useLocalStorage(`comments`, []);
 
   console.log("slug comm", comments);
-  console.log('router slug', query.slug)
+  console.log("router slug", query.slug);
 
   if (data && data.length > 0) {
     const { slug, name, imageSource, artist, year, genre, colors } = data.find(
@@ -48,7 +45,7 @@ export default function ArtPiece({
         <Gallery__Colors colors={colors} />
         <Gallery__Comments
           comments={comments}
-          id={slug}
+          slug={slug}
           setComments={setComments}
         />
       </main>
