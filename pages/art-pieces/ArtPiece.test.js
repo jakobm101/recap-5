@@ -40,5 +40,6 @@ describe("slug loaded", () => {
 
     const img = screen.getByRole("img");
     expect(img).toBeInTheDocument();
+      
   });
 });
