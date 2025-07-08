@@ -1,5 +1,5 @@
 import Gallery__Images__List from ".";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import mockRouter from "next-router-mock";
 
 jest.mock("next/router", () => jest.requireActual("next-router-mock"));
@@ -21,8 +21,10 @@ const data = [
   },
 ];
 
+
+// used package for routing
 // https://www.npmjs.com/package/next-router-mock
-describe("next-router-mock", () => {
+describe("GalleryList", () => {
   it("mocks the useRouter hook", () => {
     // Set the initial url:
     mockRouter.push("/");
@@ -32,5 +34,11 @@ describe("next-router-mock", () => {
 
     const article = screen.getByRole("article");
     expect(article).toBeInTheDocument();
+
+    const img = screen.getByRole("img");
+    expect(img).toBeInTheDocument();
+
+    const button = screen.getByRole("button", { name: /favorite/i });
+    expect(button).toBeInTheDocument();
   });
 });
