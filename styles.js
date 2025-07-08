@@ -16,6 +16,7 @@ export default createGlobalStyle`
     max-width: 1000px;
     margin: auto;
     font-family: system-ui;
+    letter-spacing: 0.03rem;
     padding-bottom: 60px;
   }
 
@@ -41,7 +42,7 @@ h4 {
   bottom: 0;
    left: 0;
    width: 100%;
-   padding: 10px;
+   padding: 20px;
    display: flex;
    justify-content: center;
    gap: 20px;
@@ -50,6 +51,7 @@ h4 {
 h1 {
   text-align: center;
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 
 main {
@@ -83,19 +85,25 @@ align-items: center;
     height: auto;
     min-height: 100%;
     aspect-ratio: initial;
+    z-index: 1;
 
+ }
+  .button-favorite {
+    position: absolute;
+    z-index: 5;
+    top: 10px;
+    right: 10px;
   }
 }
 
 .Gallery__Image--textbox {
- width: 190px;
-  height: 120px;
+  width: 100%;
+  height: 80px;
   position: absolute;
-  padding: 20px;
+  padding: 12px;
   bottom: 0;
   left: 0;
-  border-radius: 0 20px 0 0;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,1);
   backdrop-filter: blur(2px);
 p {
   margin: 0;
@@ -106,7 +114,7 @@ p {
 }
 
 .Gallery__Image--buttons {
-  display: flex;
+  display: none;
   flex-flow: column wrap;
   position: absolute;
   gap: 10px;
@@ -118,7 +126,7 @@ p {
   display: flex;
   position: fixed;
   right: 10px;
-  bottom: 60px;
+  bottom: 80px;
   flex-flow: column wrap;
   border: black 2px solid;
   border-radius: 20px;
@@ -129,12 +137,14 @@ p {
   color: white;
   display: inline-block;
             width: 80px;
+            max-width: 10vw;
             height: 70px;
             background-color: grey;
             padding: 5px;
             margin: 5px;
   border-radius: 14px;
   border: black 2px solid;
+  overflow: hidden;
 
 }
 
@@ -149,10 +159,12 @@ form {
   margin-top: 20px;
   gap: 10px;
   width: 400px;
+  max-width: 60vw;
 
 input {
   padding: 12px;
   font-size: large;
+  max-width: 50vw;
 }
 
 h4 {
@@ -176,6 +188,8 @@ h4 {
   border-radius: 20px;
   padding: 20px;
   margin: 20px;
+  margin-right: 80px;
+  max-width: 70vw;
 
   h3 {
     padding: 0;
@@ -217,15 +231,22 @@ h4 {
     top:20px;
     right: 20px;
     height: 50px;
-    width: 60px;
+    width: 100px;
   }
 
 .button__favorite-details {
     position: fixed;
     top: 80px;
     right: 20px;
-    height: 50px;
-    width: 60px;
+}
+
+.button-favorite {
+  border-radius: 100px;
+  background-color: black;
+  padding: 4px;
+  padding-top: 5px;
+  width: 40px;
+  height: 40px;
 }
 
 .favorites__none {
@@ -247,6 +268,7 @@ button {
   border-radius: 5px;
   font-size: large;
   font-weight: bold;
+  letter-spacing: 0.4px;
   cursor: pointer;
 
   a {
@@ -291,6 +313,19 @@ button {
     position: absolute;
     top: 10px;
     right: 10px;
+  }
+}
+.art-piece {
+  img {
+    height: 80vh;
+    border: black 2px solid;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 90vw;
+    height: auto;
+    min-height: 100%;
+    aspect-ratio: initial;
+
   }
 }
 `;

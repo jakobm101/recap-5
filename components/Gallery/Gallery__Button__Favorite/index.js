@@ -1,14 +1,15 @@
+import { Heart } from "lucide-react";
+
 export default function Gallery__Button__Favorite({
   id,
   toggleFavorite,
   favorites,
-  className
+  className,
 }) {
+  const isFav = favorites?.find((fav) => fav.id === id)?.isFav;
+
   return (
-    <>
-      <button className={className} onClick={() => toggleFavorite(id)}>
-        {favorites?.find((fav) => fav.id === id)?.isFav ? "📗" : "📓"} Favor
-      </button>
-    </>
+        // <Heart color='white' className={"button-favorite " + (className && className)} {...(isFav ? {fill:'white'}: {})} onClick={() => toggleFavorite(id)}/>
+        <Heart color='white' className={`button-favorite ${className ?? ""}`} {...(isFav ? {fill:'white'}: {})} onClick={() => toggleFavorite(id)}/>
   );
 }

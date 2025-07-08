@@ -9,9 +9,7 @@ export default function Gallery__Image({ image, favorites, toggleFavorite }) {
   const routeDetails = () => router.push(`/art-pieces/${image.slug}`);
 
   return (
-    <article
-      className={"gallery__image"}
-    >
+    <article className={"gallery__image"}>
       <Image
         onClick={routeDetails}
         src={image.imageSource}
@@ -23,12 +21,12 @@ export default function Gallery__Image({ image, favorites, toggleFavorite }) {
         <p>{image.name}</p>
         <p>{image.artist}</p>
       </div>
+      <Gallery__Button__Favorite
+        favorites={favorites}
+        toggleFavorite={toggleFavorite}
+        id={image.slug}
+      />
       <div className="Gallery__Image--buttons">
-        <Gallery__Button__Favorite
-          favorites={favorites}
-          toggleFavorite={toggleFavorite}
-          id={image.slug}
-        />
         <button onClick={routeDetails}>🔎 Details </button>
       </div>
     </article>
