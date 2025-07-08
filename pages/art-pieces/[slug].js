@@ -27,7 +27,9 @@ export default function ArtPiece({
           back
         </button>
         <h1>{name}</h1>
-        <Image height={300} width={300} alt="Art" src={imageSource} />
+        <div className="image-cage">
+          <Image height={300} width={300} alt="Art" src={imageSource} />
+        </div>
         <p>
           By {artist}, {year}, {genre}
         </p>

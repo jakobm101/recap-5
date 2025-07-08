@@ -81,6 +81,7 @@ align-items: center;
     box-shadow: 0 2px 0 black ;
   }
   img {
+    object-fit: cover; //█
     width: 100%;
     height: auto;
     min-height: 100%;
@@ -308,7 +309,7 @@ button {
     width: 100%;
     height: auto;
     min-height: 100%;
-    aspect-ratio: initial;
+    object-fit: cover; //█
   }
   button, svg{
     z-index: 3;
@@ -318,17 +319,26 @@ button {
   }
 
 }
+
 .art-piece {
-  img {
-    height: 80vh;
+  .image-cage{
     border: black 2px solid;
     border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    
+    max-width: 90vw;
+    max-height: 80vh;
+
+  }
+    img {
     width: 100%;
     max-width: 90vw;
     height: auto;
-    min-height: 100%;
-    aspect-ratio: initial;
-
+    max-height: 80vh; //█
+    object-fit: cover; //█
   }
 }
+
+
 `;
