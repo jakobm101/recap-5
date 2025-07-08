@@ -7,12 +7,12 @@ export default function Gallery__Comments({ comments, setComments, slug }) {
       <h3>Comments</h3>
       <ul>
         {comments.length ? (
-          comments.map((comment, index) => {
-            if (comment.slug === slug) {
+          comments.map(({slug: commentSlug, body, date }, index) => {
+            if (commentSlug === slug) {
               return (
                 <li key={index} className={"comment"}>
-                  <p>{comment.body}</p>
-                  <p className="comment__date">{comment.date}</p>
+                  <p>{body}</p>
+                  <p className="comment__date">{date}</p>
                 </li>
               );
             }
