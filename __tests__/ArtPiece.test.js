@@ -43,7 +43,6 @@ describe("slug loaded", () => {
     expect(img).toBeInTheDocument();
 
     const colors = screen.getAllByRole("article", {name:/color sample/i});
-    // console.log(color.style._values['background-color']);
     const colorBG = colors[1].style._values['background-color']
     
     expect(colorBG).toBeDefined()
