@@ -4,7 +4,7 @@ import mockRouter from "next-router-mock";
 import data from "@/data/mockData";
 
 jest.mock("next/router", () => jest.requireActual("next-router-mock"));
-
+    
 
 
 // used package for routing
