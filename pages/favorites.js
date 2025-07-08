@@ -14,13 +14,11 @@ export default function Favorites({
     return (
       <main>
         <h1> Favorites </h1>
-        {data.length && (
           <Gallery__Images__List
             data={favoritesData}
             favorites={favorites}
             toggleFavorite={toggleFavorite}
           />
-        )}
       </main>
     );
   } else {
