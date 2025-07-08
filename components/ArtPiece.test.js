@@ -1,4 +1,4 @@
-import ArtPiece from "./[slug]";
+import ArtPiece from "../pages/art-pieces/[slug]";
 import { render, screen } from "@testing-library/react";
 import mockRouter from "next-router-mock";
 import mockData from "@/data/mockData";
