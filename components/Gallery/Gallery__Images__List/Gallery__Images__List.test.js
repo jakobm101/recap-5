@@ -21,7 +21,6 @@ const data = [
   },
 ];
 
-
 // used package for routing
 // https://www.npmjs.com/package/next-router-mock
 describe("GalleryList", () => {
@@ -35,10 +34,13 @@ describe("GalleryList", () => {
     const article = screen.getByRole("article");
     expect(article).toBeInTheDocument();
 
-    const img = screen.getByRole("img");
+    const img = screen.getByRole("img", {name:/art/i});
     expect(img).toBeInTheDocument();
 
     const button = screen.getByRole("button", { name: /favorite/i });
     expect(button).toBeInTheDocument();
+
+    const textArtist = screen.getByText("Jakob M101");
+    expect(textArtist).toBeInTheDocument();
   });
 });
