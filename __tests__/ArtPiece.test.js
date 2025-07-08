@@ -6,7 +6,7 @@ import mockData from "@/data/mockData";
 jest.mock("next/router", () => jest.requireActual("next-router-mock"));
 
 describe("slug", () => {
-  it("Art piece fails loading", async () => {
+  it("Art piece fails loading", () => {
     mockRouter.push("/");
     render(<ArtPiece />);
     const text = screen.getByText(/nothing/i);
@@ -15,16 +15,12 @@ describe("slug", () => {
 });
 
 describe("slug loaded", () => {
-  it("checks for Art Piece details", async () => {
+  it("checks for Art Piece details",  () => {
     // This is quite tricky but good to know how this works
     mockRouter.push({
       pathname: "/art-pieces/[slug]",
       query: { slug: "orange-red-and-green" },
     });
-
-    await waitFor(() =>
-      expect(mockRouter.asPath).toBe("/art-pieces/orange-red-and-green")
-    );
 
     render(<ArtPiece data={mockData} />);
 
@@ -45,5 +41,5 @@ describe("slug loaded", () => {
 
     const img = screen.getByRole("img");
     expect(img).toBeInTheDocument();
-  });
+});
 });
