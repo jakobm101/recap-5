@@ -6,10 +6,14 @@ export default function Favorites({
   toggleFavorite,
   favorites,
 }) {
+
   if (isLoading) return <h1>Loading</h1>;
   const favoritesData = data.filter(
     (img) => favorites?.find((fav) => fav.id === img.slug)?.isFav
   );
+  console.log(favorites.find(fav => fav.isFav));
+  
+  
   return (
     <main>
       <h1> Favorites </h1>
@@ -18,6 +22,12 @@ export default function Favorites({
         favorites={favorites}
         toggleFavorite={toggleFavorite}
       />
+      { !(favorites?.find(fav => fav.isFav)) && (
+        <div>
+          <h2> No Favorites yet</h2>
+          <p>Add some pieces in the gallery</p>
+        </div>
+      )}
     </main>
   );
 }
