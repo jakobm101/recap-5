@@ -1,4 +1,3 @@
-import { uid } from "react-uid";
 import Gallery__Comment__Form from "../Gallery__Comment__Form";
 
 export default function Gallery__Comments({ comments, setComments, slug }) {
@@ -8,10 +7,10 @@ export default function Gallery__Comments({ comments, setComments, slug }) {
       <h3>Comments</h3>
       <ul>
         {comments.length ? (
-          comments.map((comment) => {
+          comments.map((comment, index) => {
             if (comment.slug === slug) {
               return (
-                <li key={uid(comment)} className={"comment"}>
+                <li key={index} className={"comment"}>
                   <p>{comment.body}</p>
                   <p className="comment__date">{comment.date}</p>
                 </li>
