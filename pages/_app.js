@@ -9,6 +9,7 @@ const fetcher = (url) => fetch(url).then((response) => response.json());
 export default function App({ Component, pageProps }) {
   const { data, isLoading, error } = useSWR(URL, () => fetcher(URL));
   const [favorites, setFavorites] = useLocalStorage("favorites", []);
+  
 
   const toggleFavorite = (id) => {
     console.log("handling", id, favorites);
