@@ -265,6 +265,7 @@ h4 {
 
 button {
   padding: 10px;
+  background-color: white;
   border-radius: 5px;
   font-size: large;
   font-weight: bold;
@@ -273,6 +274,7 @@ button {
 
   a {
     display: block;
+    color: black;
   }
 
   &:disabled a {
@@ -308,12 +310,13 @@ button {
     min-height: 100%;
     aspect-ratio: initial;
   }
-  button {
+  button, svg{
     z-index: 3;
     position: absolute;
     top: 10px;
     right: 10px;
   }
+
 }
 .art-piece {
   img {
