@@ -185,4 +185,36 @@ h4 {
     width: 60px;
 }
 
+.favorites__none {
+  text-align: center;
+  a {
+    border: black 1px solid;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    display: inline-block;
+    &:hover {
+      box-shadow: 0 2px 0 black;
+    }
+  }
+}
+
+button {
+  border-radius: 5px;
+  font-size: large;
+&:disabled a {
+ color: var(--color-grey-500)
+}
+
+  &:hover {
+    box-shadow: 0 2px 0 black;
+    &:disabled {
+      box-shadow: none;
+      cursor: not-allowed;
+      a:visited {
+        cursor: not-allowed;
+      }
+    }
+  }
+}
 `;

@@ -1,4 +1,5 @@
 import Gallery__Images__List from "@/components/Gallery/Gallery__Images__List";
+import Link from "next/link";
 
 export default function Favorites({
   data,
@@ -23,10 +24,11 @@ export default function Favorites({
         toggleFavorite={toggleFavorite}
       />
       { !(favorites?.find(fav => fav.isFav)) && (
-        <div>
+        <article className={'favorites__none'}>
           <h2> No Favorites yet</h2>
           <p>Add some pieces in the gallery</p>
-        </div>
+        <Link href={'/art-pieces'}>Gallery</Link>
+        </article>
       )}
     </main>
   );
