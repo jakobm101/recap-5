@@ -2,7 +2,6 @@ import { uid } from "react-uid";
 import Gallery__Comment__Form from "../Gallery__Comment__Form";
 
 export default function Gallery__Comments({ comments, setComments, slug }) {
-  console.log("comm gal com", comments);
 
   return (
     <section className="comments">

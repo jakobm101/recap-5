@@ -1,7 +1,6 @@
 export default function Gallery__Comment__Form({ comments, setComments, slug}) {
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("HANDLING🙀", e.target.body.value);
     setComments([
       ...comments,
       { body: e.target.body.value, date: new Date().toLocaleString(), slug: slug},

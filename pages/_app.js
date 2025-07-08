@@ -12,7 +12,6 @@ export default function App({ Component, pageProps }) {
   
 
   const toggleFavorite = (id) => {
-    console.log("handling", id, favorites);
 
     // let newArray = favorites.map((fav) => fav.id === id ? { ...fav, isFav: !fav.isFav } : fav);
     let newArray = [];

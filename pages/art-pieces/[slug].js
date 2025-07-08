@@ -14,8 +14,6 @@ export default function ArtPiece({
   const { query, back } = useRouter();
   const [comments, setComments] = useLocalStorage(`comments`, []);
 
-  console.log("slug comm", comments);
-  console.log("router slug", query.slug);
 
   if (data && data.length > 0) {
     const { slug, name, imageSource, artist, year, genre, colors } = data.find(

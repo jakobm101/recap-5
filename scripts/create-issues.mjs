@@ -67,7 +67,6 @@ async function main() {
       color: label.color,
     }));
     await createIssue(issue.title, issue.body, labels);
-    console.log(`Created issue: ${issue.title}`);
   }
 }
 
