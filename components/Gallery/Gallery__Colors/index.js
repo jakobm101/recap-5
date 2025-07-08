@@ -9,6 +9,7 @@ export default function Gallery__Colors({ colors }) {
             className="color"
             style={{ backgroundColor: color }}
             key={uid(color)}
+            aria-label="color sample"
           >
             {color}
           </article>
