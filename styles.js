@@ -7,7 +7,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 :root {
-  --color-grey: #d5d5d5; 
+  --color-grey: #d5d5d5;
   --color-grey-500: #9c9c9c;
   --color-grey-100: #fafafa
 }
@@ -18,6 +18,7 @@ export default createGlobalStyle`
     font-family: system-ui;
     padding-bottom: 60px;
   }
+
  #__next > div {
   display: flex;
    justify-content: center;
@@ -32,8 +33,9 @@ h4 {
  a {
   text-decoration: none;
  }
- 
+
  nav {
+   z-index: 11;
   position: fixed;
   bottom: 0;
    left: 0;
@@ -41,12 +43,7 @@ h4 {
    padding: 10px;
    display: flex;
    justify-content: center;
-   background-color: var(--color-grey);
    gap: 20px;
-   button {
-     margin: 5px;
-     padding: 5px;
-   }
  }
 
 h1 {
@@ -64,11 +61,55 @@ align-items: center;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  gap: 20px;
 }
 
 .gallery__image {
+  position: relative;
   border: black 2px solid;
-  width: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+  gap: 20px;
+  &:hover{
+    box-shadow: 0 2px 0 black ;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    aspect-ratio: initial;
+
+  }
+}
+
+.Gallery__Image--textbox {
+ width: 190px;
+  height: 120px;
+  position: absolute;
+  padding: 20px;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 20px 0 0;
+  background-color: rgba(255,255,255,0.5);
+  backdrop-filter: blur(2px);
+p {
+  margin: 0;
+  &:first-child{
+    font-weight: bold;
+  }
+}
+}
+
+.Gallery__Image--buttons {
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  gap: 10px;
+  right: 10px;
+  bottom: 10px;
 }
 
 .colors {
@@ -92,7 +133,7 @@ align-items: center;
             margin: 5px;
   border-radius: 14px;
   border: black 2px solid;
-  
+
 }
 
 form {
@@ -121,10 +162,10 @@ h4 {
   label {
     display: none;
   }
-  
+
   button {
     width: fit-content;
-    padding: 10px;
+    padding: 20px;
   }
 }
 
@@ -132,7 +173,7 @@ h4 {
   border: black 2px solid;
   border-radius: 20px;
   padding: 20px;
-  margin: 20px;  
+  margin: 20px;
 
   h3 {
     padding: 0;
@@ -152,17 +193,17 @@ h4 {
     padding: 10px;
     margin: 20px 0 20px 0;
     padding-left: 36px;
-    
+
     p {
       margin: 0;
     }
-    
+
     .comment__date {
       font-size: small;
       color: var(--color-grey-500);
     }
   }
-  
+
   .comment__empty {
     padding-left: 34px;
     color: var(--color-grey-500)
@@ -200,11 +241,19 @@ h4 {
 }
 
 button {
+  padding: 10px;
   border-radius: 5px;
   font-size: large;
-&:disabled a {
- color: var(--color-grey-500)
-}
+  font-weight: bold;
+
+  a {
+    display: block;
+  }
+
+  &:disabled a {
+    color: var(--color-grey-500);
+    cursor: not-allowed;
+  }
 
   &:hover {
     box-shadow: 0 2px 0 black;

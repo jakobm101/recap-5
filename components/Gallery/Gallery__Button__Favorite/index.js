@@ -7,7 +7,7 @@ export default function Gallery__Button__Favorite({
   return (
     <>
       <button className={className} onClick={() => toggleFavorite(id)}>
-        Favorite {favorites?.find((fav) => fav.id === id)?.isFav ? "📗" : "📓"}
+        {favorites?.find((fav) => fav.id === id)?.isFav ? "📗" : "📓"} Favor
       </button>
     </>
   );
