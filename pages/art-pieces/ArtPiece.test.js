@@ -37,5 +37,8 @@ describe("slug loaded", () => {
 
     const submit = screen.getByRole("button", { name: /submit/i });
     expect(submit).toBeInTheDocument();
+
+    const img = screen.getByRole("img");
+    expect(img).toBeInTheDocument();
   });
 });
