@@ -36,6 +36,7 @@ h4 {
 
  nav {
    z-index: 11;
+   backdrop-filter: blur(5px);
   position: fixed;
   bottom: 0;
    left: 0;
@@ -48,6 +49,7 @@ h4 {
 
 h1 {
   text-align: center;
+  text-transform: uppercase;
 }
 
 main {
@@ -245,6 +247,7 @@ button {
   border-radius: 5px;
   font-size: large;
   font-weight: bold;
+  cursor: pointer;
 
   a {
     display: block;
@@ -264,6 +267,30 @@ button {
         cursor: not-allowed;
       }
     }
+  }
+}
+
+.spotlight{
+  position: relative;
+  border: black 2px solid;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 80vh;
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 0 black;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    aspect-ratio: initial;
+  }
+  button {
+    z-index: 3;
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
 }
 `;
