@@ -24,6 +24,11 @@ export default createGlobalStyle`
    flex-flow: column wrap;
  }
 
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
  a {
   text-decoration: none;
  }

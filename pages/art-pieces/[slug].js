@@ -11,37 +11,31 @@ export default function ArtPiece({
   favorites,
   toggleFavorite,
 }) {
-  const router = useRouter();
+  const { query, back } = useRouter();
   const [comments, setComments] = useLocalStorage(
-    `comments for ${router.query.slug}`,
+    `comments for ${query.slug}`,
     []
   );
 
   console.log("slug comm", comments);
+  console.log('router slug', query.slug)
 
   if (data && data.length > 0) {
     const { slug, name, imageSource, artist, year, genre, colors } = data.find(
-      (img) => img.slug === router.query.slug
+      (img) => img.slug === query.slug
     );
     const isFav = favorites?.find((fav) => fav.id === slug && fav.isFav);
-    const style = { border: "lime 5px solid" };
 
     return (
       <main>
-        <button onClick={router.back} type="button" className="button__back">
+        <button onClick={back} type="button" className="button__back">
           back
         </button>
         <h1>
           {name}
-          {isFav ? " ⭐️ love it so much" : " 🤷"}
+          {isFav ? " 📗" : " 📓"}
         </h1>
-        <Image
-          height={300}
-          width={300}
-          alt="Art"
-          src={imageSource}
-          style={isFav ? style : ""}
-        />
+        <Image height={300} width={300} alt="Art" src={imageSource} />
         <p>
           By {artist}, {year}, {genre}
         </p>
