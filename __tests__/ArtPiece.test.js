@@ -15,7 +15,7 @@ describe("slug", () => {
 });
 
 describe("slug loaded", () => {
-  it("checks for Art Piece details",  () => {
+  it("checks for Art Piece details", () => {
     // This is quite tricky but good to know how this works
     mockRouter.push({
       pathname: "/art-pieces/[slug]",
@@ -41,5 +41,12 @@ describe("slug loaded", () => {
 
     const img = screen.getByRole("img");
     expect(img).toBeInTheDocument();
-});
+
+    const colors = screen.getAllByRole("article", {name:/color sample/i});
+    // console.log(color.style._values['background-color']);
+    const colorBG = colors[1].style._values['background-color']
+    
+    expect(colorBG).toBeDefined()
+    expect(colors.length).toBeGreaterThanOrEqual(5);
+  });
 });
