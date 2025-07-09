@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { X } from "lucide-react";
 import Image from "next/image";
 import Gallery__Button__Favorite from "@/components/Gallery/Gallery__Button__Favorite";
 import useLocalStorage from "use-local-storage";
@@ -14,7 +15,6 @@ export default function ArtPiece({
   const { query, back } = useRouter();
   const [comments, setComments] = useLocalStorage(`comments`, []);
 
-
   if (data && data.length > 0) {
     const { slug, name, imageSource, artist, year, genre, colors } = data.find(
       (img) => img.slug === query.slug
@@ -22,15 +22,12 @@ export default function ArtPiece({
     const isFav = favorites?.find((fav) => fav.id === slug && fav.isFav);
 
     return (
-      <main>
-        <button onClick={back} type="button" className="button__back">
-          back
-        </button>
-        <h1>
-          {name}
-          {isFav ? " 📗" : " 📓"}
-        </h1>
-        <Image height={300} width={300} alt="Art" src={imageSource} />
+      <main className="art-piece">
+        <X onClick={back} className="button__back" />
+        <h1>{name}</h1>
+        <div className="image-cage">
+          <Image height={300} width={300} alt="Art" src={imageSource} />
+        </div>
         <p>
           By {artist}, {year}, {genre}
         </p>

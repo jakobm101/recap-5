@@ -12,7 +12,7 @@ export default function Spotlight({
     return <h2>is loading ⭐️ </h2>;
   } else if (image) {
     return (
-      <>
+      <article className="spotlight">
         <Image
           src={image.imageSource}
           onClick={onClick}
@@ -28,7 +28,7 @@ export default function Spotlight({
           id={image.slug}
           favorites={favorites}
         />
-      </>
+      </article>
     );
   } else {
     return <h2>No image available</h2>;

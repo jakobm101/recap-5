@@ -1,4 +1,3 @@
-import { uid } from "react-uid";
 import Gallery__Image from "../Gallery__Image";
 
 export default function Gallery__Images__List({
@@ -9,10 +8,10 @@ export default function Gallery__Images__List({
   if (data) {
     return (
       <section className="gallery__list">
-        {data.map((image) => (
+        {data.map((image, index) => (
           <Gallery__Image
             image={image}
-            key={uid(image)}
+            key={index}
             favorites={favorites}
             toggleFavorite={toggleFavorite}
           />
