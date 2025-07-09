@@ -10,6 +10,6 @@ export default function Gallery__Button__Favorite({
 
   return (
         // <Heart color='white' className={"button-favorite " + (className && className)} {...(isFav ? {fill:'white'}: {})} onClick={() => toggleFavorite(id)}/>
-        <Heart color='white' className={`button-favorite ${className ?? ""}`} {...(isFav ? {fill:'white'}: {})} onClick={() => toggleFavorite(id)}/>
+        <Heart color='black' className={`button-favorite ${className ?? ""}`} {...(isFav ? {fill:'black'}: {})} onClick={() => toggleFavorite(id)}/>
   );
 }

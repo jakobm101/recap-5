@@ -17,7 +17,7 @@ export default createGlobalStyle`
     margin: auto;
     font-family: system-ui;
     letter-spacing: 0.03rem;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
   }
 
  #__next > div {
@@ -132,11 +132,18 @@ p {
   border: black 2px solid;
   border-radius: 20px;
   margin: 10px;
+  backdrop-filter: blur(3px);
 }
 
 .color {
   color: white;
-  display: inline-block;
+  font-size: xx-small;
+  text-align: center;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
             width: 80px;
             max-width: 10vw;
             height: 70px;
@@ -232,22 +239,24 @@ h4 {
     top:20px;
     right: 20px;
     height: 50px;
-    width: 100px;
+    width: 40px;
+    cursor: pointer;
   }
 
-.button__favorite-details {
-    position: fixed;
-    top: 80px;
-    right: 20px;
-}
-
 .button-favorite {
+  cursor: pointer;
   border-radius: 100px;
-  background-color: black;
+  background-color: white;
   padding: 4px;
   padding-top: 5px;
   width: 40px;
   height: 40px;
+}
+
+.button__favorite-details {
+    position: fixed;
+    top: 24px;
+    right: 80px;
 }
 
 .favorites__none {
@@ -300,7 +309,7 @@ button {
   border: black 2px solid;
   border-radius: 20px;
   overflow: hidden;
-  height: 80vh;
+  height: calc(100vh - 180px);
   &:hover{
     cursor: pointer;
     box-shadow: 0 4px 0 black;
@@ -328,7 +337,7 @@ button {
     width: 100%;
     
     max-width: 90vw;
-    max-height: 80vh;
+    max-height: calc(100vh - 250px)
 
   }
     img {

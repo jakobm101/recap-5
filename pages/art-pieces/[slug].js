@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { Heart } from "lucide-react";
+import { X } from "lucide-react";
 import Image from "next/image";
 import Gallery__Button__Favorite from "@/components/Gallery/Gallery__Button__Favorite";
 import useLocalStorage from "use-local-storage";
@@ -23,9 +23,7 @@ export default function ArtPiece({
 
     return (
       <main className="art-piece">
-        <button onClick={back} type="button" className="button__back">
-          back
-        </button>
+        <X onClick={back} className="button__back" />
         <h1>{name}</h1>
         <div className="image-cage">
           <Image height={300} width={300} alt="Art" src={imageSource} />
